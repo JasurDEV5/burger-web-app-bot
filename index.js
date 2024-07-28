@@ -1,25 +1,36 @@
 const express = require('express')
-const { Telegraf, Markup } = require('telegraf')
+const TelegramBot = require('node-telegram-bot-api')
 const path = require('path')
 const cors = require('cors')
-
 require('dotenv').config()
-
 const app = express()
 app.use(cors())
-const bot = new Telegraf('7211274590:AAE4mCuk3RGZj_HKZLuB-qlyH1jpeThs9_k')
-const groupId = '-1002159292810' // Replace with your group ID
-
 app.use(express.json())
 app.use(express.static('public'))
 
-bot.start(ctx => {
-	const chatId = ctx.chat.id
-	const url = `https://burger-bot-2638292ac8ae.herokuapp.com/?chat_id=${chatId}` // Replace with your actual URL
-	ctx.reply(
-		'Salom, Burger Housega Hushkelibsiz!\n bot test rejimda, buyurtma berish uchun pastagi tugmani bosing',
-		Markup.inlineKeyboard([Markup.button.url('Buyurtma berish', url)])
-	)
+const bot = new TelegramBot('7211274590:AAE4mCuk3RGZj_HKZLuB-qlyH1jpeThs9_k', {
+	polling: true,
+})
+const groupId = '-1002159292810' // Replace with your group ID
+
+bot.onText(/\/start/, msg => {
+	const chatId = msg.chat.id
+	const options = {
+		reply_markup: {
+			keyboard: [
+				[
+					{
+						text: 'Buyurtma berish',
+						web_app: {
+							url: `https://burger-bot-2638292ac8ae.herokuapp.com?chat_id=${chatId}`,
+						},
+					},
+				],
+			],
+			resize_keyboard: true,
+		},
+	}
+	bot.sendMessage(chatId, 'Salom, Burger Housega Hushkelibsiz!\nbot test rejimda, buyurtma berish uchun pastagi tugmani bosing', options)
 })
 
 app.get('/register', (req, res) => {
@@ -40,7 +51,6 @@ app.post('/order', (req, res) => {
 		return res.json({ success: false, message: 'Chat ID is missing' })
 	}
 
-	// Format the order message
 	let orderMessage = `Buyurtmachi nomi: ${name}\n`
 	orderMessage += `Telefon raqam: ${callNumber}\n\n`
 	orderMessage += `Buyurtmalar:\n`
@@ -54,11 +64,8 @@ app.post('/order', (req, res) => {
 	orderMessage += `\nUmumiy summa: ${totalPrice} soum`
 
 	Promise.all([
-		bot.telegram.sendMessage(
-			chatId,
-			`Sizning buyurtmangiz:\n\n${orderMessage}`
-		),
-		bot.telegram.sendMessage(
+		bot.sendMessage(chatId, `Sizning buyurtmangiz:\n\n${orderMessage}`),
+		bot.sendMessage(
 			groupId,
 			`Yangi buyurtma qabul qilindi:\n\n${orderMessage}`
 		),
@@ -72,9 +79,6 @@ app.post('/order', (req, res) => {
 		})
 })
 
-bot.launch()
-
-const PORT = process.env.PORT || 3000// Ensure the port is not in use
-app.listen(PORT, () => {
-	console.log(`Server is running on port ${PORT}`)
+app.listen(process.env.PORT || 3000, () => {
+	console.log('Server is running on port 3000')
 })
