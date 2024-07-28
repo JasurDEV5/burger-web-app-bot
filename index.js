@@ -15,7 +15,7 @@ app.use(express.static('public'))
 
 bot.start(ctx => {
 	const chatId = ctx.chat.id
-	const url = `https://burger-web-app-bot.netlify.app?chat_id=${chatId}` // Replace with your actual URL
+	const url = `https://burger-bot-2638292ac8ae.herokuapp.com/?chat_id=${chatId}` // Replace with your actual URL
 	ctx.reply(
 		'Salom, Burger Housega Hushkelibsiz!\n bot test rejimda, buyurtma berish uchun pastagi tugmani bosing',
 		Markup.inlineKeyboard([Markup.button.url('Buyurtma berish', url)])

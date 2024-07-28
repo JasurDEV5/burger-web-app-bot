@@ -82,7 +82,7 @@
 			document.getElementById('total-price').textContent = totalPrice;
 
 			// Send the order to the server (replace URL with your webhook URL)
-			fetch('https://burger-bot-080e973ad44a.herokuapp.com/order', {
+			fetch('https://burger-bot-2638292ac8ae.herokuapp.com/order', {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',
