@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+	<link rel="stylesheet" href="style.css">
+	<title>Products</title>
+</head>
+<body>
+	<div id="loading">
+		<div class="spinner-border text-primary" role="status">
+			<span class="visually-hidden">Loading...</span>
+		</div>
+	</div>
+
+	<h1>House Burger</h1>
+	<!-- Alerts -->
+	<div class="alert alert-danger alert-none" role="alert">
+		<i class="bi bi-exclamation-triangle-fill fs-1"></i>
+		<p class="m-0">Iltimos, kamida bitta mahsulotni tanlang, ismingiz va telefon raqamingizni kiriting.</p>
+	</div>
+	<div class="alert alert-success alert-none" rol="alert">
+		<i class="bi bi-check-circle-fill fs-1"></i>
+		<p class="m-0">Buyurtmangiz qabul qilindi, Yaqin orada aloqaga chiqamiz!</p>
+	</div>
+
+	<!-- Products and order form -->
+	<form id="order-form">
+        <input type="hidden" id="chatId" name="chatId" value=""/>
+				<div class="card-container">
+					<div class="box">
+						<img src="img/burger1.png" />
+						<label for="burger1">Burger</label>
+						<input type="hidden" name="product" value="Burger" />
+						<h3 class="title-price" data-price="15000">uzs 15 000</h3>
+						<div class="d-flex align-items-center mt-3">
+							<div class="dec button">-</div>
+							<input
+								type="number"
+								name="quantities"
+								value="0"
+								class="input-flied"
+							/>
+							<div class="inc button">+</div>
+						</div>
+						<input type="hidden" name="prices" value="15000" />
+					</div>
+					<div class="box">
+						<img src="img/burger2.png" />
+						<label for="burger2">Big Burger</label>
+						<input type="hidden" name="product" value="Big Burger" />
+						<h3 class="title-price" data-price="35000">uzs 35 000</h3>
+						<div class="d-flex align-items-center mt-3">
+							<div class="dec button">-</div>
+							<input
+								type="number"
+								name="quantities"
+								value="0"
+								class="input-flied"
+							/>
+							<div class="inc button">+</div>
+						</div>
+						<input type="hidden" name="prices" value="35000" />
+					</div>
+					<div class="box">
+						<img src="img/lavash1.png" />
+						<label for="lavash1">Lavash 1</label>
+						<input type="hidden" name="product" value="Lavash 1" />
+						<h3 class="title-price" data-price="37000">uzs 37 000</h3>
+						<div class="d-flex align-items-center mt-3">
+							<div class="dec button">-</div>
+							<input
+								type="number"
+								name="quantities"
+								value="0"
+								class="input-flied"
+							/>
+							<div class="inc button">+</div>
+						</div>
+						<input type="hidden" name="prices" value="37000" />
+					</div>
+					<div class="box">
+						<img src="img/lavash2.png" />
+						<label for="lavash2">Lavash 2</label>
+						<input type="hidden" name="product" value="Lavash 2" />
+						<h3 class="title-price" data-price="35000">uzs 35 000</h3>
+						<div class="d-flex align-items-center mt-3">
+							<div class="dec button">-</div>
+							<input
+								type="number"
+								name="quantities"
+								value="0"
+								class="input-flied"
+							/>
+							<div class="inc button">+</div>
+						</div>
+						<input type="hidden" name="prices" value="35000" />
+					</div>
+					<div class="box">
+						<img src="img/lavash3.png" />
+						<label for="lavash3">Lavash 3</label>
+						<input type="hidden" name="product" value="Lavash 3" />
+						<h3 class="title-price" data-price="30000">uzs 30 000</h3>
+						<div class="d-flex align-items-center mt-3">
+							<div class="dec button">-</div>
+							<input
+								type="number"
+								name="quantities"
+								value="0"
+								class="input-flied"
+							/>
+							<div class="inc button">+</div>
+						</div>
+						<input type="hidden" name="prices" value="30000" />
+					</div>
+					<div class="box">
+						<img src="img/lavash4.png" />
+						<label for="lavash4">Lavash 4</label>
+						<input type="hidden" name="product" value="Lavash 4" />
+						<h3 class="title-price" data-price="32000">uzs 32 000</h3>
+						<div class="d-flex align-items-center mt-3">
+							<div class="dec button">-</div>
+							<input
+								type="number"
+								name="quantities"
+								value="0"
+								class="input-flied"
+							/>
+							<div class="inc button">+</div>
+						</div>
+						<input type="hidden" name="prices" value="32000" />
+					</div>
+					<div class="box">
+						<img src="img/pizza1.png" />
+						<label for="pizza1">Pizza 1</label>
+						<input type="hidden" name="product" value="Pizza 1" />
+						<h3 class="title-price" data-price="50000">uzs 50 000</h3>
+						<div class="d-flex align-items-center mt-3">
+							<div class="dec button">-</div>
+							<input
+								type="number"
+								name="quantities"
+								value="0"
+								class="input-flied"
+							/>
+							<div class="inc button">+</div>
+						</div>
+						<input type="hidden" name="prices" value="50000" />
+					</div>
+					<div class="box">
+						<img src="img/pizza2.png" />
+						<label for="pizza2">Pizza 2</label>
+						<input type="hidden" name="product" value="Pizza 2" />
+						<h3 class="title-price" data-price="55000">uzs 55 000</h3>
+						<div class="d-flex align-items-center mt-3">
+							<div class="dec button">-</div>
+							<input
+								type="number"
+								name="quantities"
+								value="0"
+								class="input-flied"
+							/>
+							<div class="inc button">+</div>
+						</div>
+						<input type="hidden" name="prices" value="55000" />
+					</div>
+					<div class="box">
+						<img src="img/doner.png" />
+						<label for="doner">Doner</label>
+						<input type="hidden" name="product" value="Doner" />
+						<h3 class="title-price" data-price="45000">uzs 45 000</h3>
+						<div class="d-flex align-items-center mt-3">
+							<div class="dec button">-</div>
+							<input
+								type="number"
+								name="quantities"
+								value="0"
+								class="input-flied"
+							/>
+							<div class="inc button">+</div>
+						</div>
+						<input type="hidden" name="prices" value="45000" />
+					</div>
+					<div class="box">
+						<img src="img/pepsi.png" />
+						<label for="pepsi">Pepsi 1.5L</label>
+						<input type="hidden" name="product" value="Pepsi 1.5L" />
+						<h3 class="title-price" data-price="14000">uzs 14 000</h3>
+						<div class="d-flex align-items-center mt-3">
+							<div class="dec button">-</div>
+							<input
+								type="number"
+								name="quantities"
+								value="0"
+								class="input-flied"
+							/>
+							<div class="inc button">+</div>
+						</div>
+						<input type="hidden" name="prices" value="14000" />
+					</div>
+					<div class="box">
+						<img src="img/coca-cola.png" />
+						<label for="coca-cola">Coca-Cola 1.5L</label>
+						<input type="hidden" name="product" value="Coca-Cola 1.5L" />
+						<h3 class="title-price" data-price="14000">uzs 14 000</h3>
+						<div class="d-flex align-items-center mt-3">
+							<div class="dec button">-</div>
+							<input
+								type="number"
+								name="quantities"
+								value="0"
+								class="input-flied"
+							/>
+							<div class="inc button">+</div>
+						</div>
+						<input type="hidden" name="prices" value="14000" />
+					</div>
+					<div class="box">
+						<img src="img/sprite.png" />
+						<label for="sprite">Sprite 1.5L</label>
+						<input type="hidden" name="product" value="Sprite 1.5L" />
+						<h3 class="title-price" data-price="14000">uzs 14 000</h3>
+						<div class="d-flex align-items-center mt-3">
+							<div class="dec button">-</div>
+							<input
+								type="number"
+								name="quantities"
+								value="0"
+								class="input-flied"
+							/>
+							<div class="inc button">+</div>
+						</div>
+						<input type="hidden" name="prices" value="14000" />
+					</div>
+				</div>
+				<div class="py-4"></div>
+
+		<div class="order-box">
+			<span>Umumi narx: <span id="total-price">0</span> so'm</span>
+			<!-- Button trigger modal -->
+			<button class="btn btn-success ms-3" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+				Davom etish
+			</button>
+
+			<!-- Modal -->
+			<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="exampleModalLabel">Buyurtmani rasmiylashtirish</h5>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<div class="modal-body">
+							<input id="name" name="name" type="text" class="form-control mb-2" placeholder="Buyurtmachi nomi" />
+							<label for="call_number">Telefon</label>
+							<input id="call_number" name="call_number" type="number" class="form-control" placeholder="+998 9X XXX XX XX" />
+						</div>
+						<div class="modal-footer">
+							<button type="button" id="order-button" class="btn btn-success w-100">Buyurtma berish</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+
+	<!-- Scripts -->
+	<script src="main.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
