@@ -8,7 +8,7 @@ app.use(cors())
 app.use(express.json())
 app.use(express.static('public'))
 
-const bot = new TelegramBot('7211274590:AAE4mCuk3RGZj_HKZLuB-qlyH1jpeThs9_k', {
+const bot = new TelegramBot('7211274590:AAE4mCuk3RGZj_HKZLuB-qlyH1jpeThs9_c', {
 	polling: true,
 })
 const groupId = '-1002159292810' // Replace with your group ID
